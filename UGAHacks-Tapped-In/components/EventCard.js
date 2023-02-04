@@ -1,18 +1,103 @@
-import { Card, Button, Text } from "@rneui/themed";
+import { View, StyleSheet, Image } from "react-native";
+import { Card, Text, useTheme } from "@rneui/themed";
 
 const EventCard = () => {
+  const { theme } = useTheme();
+
+  const styles = StyleSheet.create({
+    cardContainerStyle: {
+      borderRadius: 10,
+    },
+    row: {
+      flex: 1,
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "flex-start",
+      alignItems: "flex-start",
+    },
+    rowCenter: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "flex-start",
+      alignItems: "center",
+    },
+    rowSpaceBetweenCenter: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    column: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-start",
+      alignItems: "flex-start",
+    },
+    columnCenter: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-start",
+      alignItems: "center",
+    },
+    p: {
+      fontFamily: "Dosis-Medium",
+      fontSize: 16,
+    },
+    username: {
+      fontFamily: "Dosis-Medium",
+      fontSize: 16,
+    },
+    image: {
+      aspectRatio: 1,
+      width: 100,
+      resizeMode: "contain",
+    },
+    icon: {
+      width: 15,
+      height: 20,
+      resizeMode: "contain",
+    },
+    h2: {
+      fontFamily: "Dosis-Bold",
+      fontSize: 28,
+      color: theme.colors.primary,
+    },
+    primary: {
+      color: theme.colors.primary,
+    },
+    smallPadding: {
+      padding: 10,
+    },
+    smallMarginHorizontal: {
+      marginHorizontal: 5,
+    },
+  });
+
   return (
-    <Card>
-      <Text>Word of the Day</Text>
-      <Text h4>be-nev-o=lent</Text>
-      <Text>adjective</Text>
-      <Text>
-        well meaning and kindly.
-        {'"a benevolent smile"'}
-      </Text>
-      <Button size="sm" type="clear">
-        Learn More
-      </Button>
+    <Card containerStyle={styles.cardContainerStyle} wrapperStyle={styles.row}>
+      <View style={[styles.columnCenter, styles.smallMarginHorizontal]}>
+        <Card.Image
+          source={{
+            uri: "https://dar.uga.edu/wp-content/uploads/UGA-Special-Events-Commencement-with-Hairy-Dawg-and-Ryan-Seacrest.png",
+          }}
+          containerStyle={styles.image}
+        />
+        <Text style={styles.p}>Posted by:</Text>
+        <Text style={[styles.p, styles.primary]}>Username</Text>
+      </View>
+
+      <View style={[styles.column, styles.smallMarginHorizontal]}>
+        <Text style={styles.h2}>Event Title</Text>
+        <View style={styles.rowCenter}>
+          <Image
+            style={[styles.icon, styles.smallMarginHorizontal]}
+            source={require("../assets/icons/location.png")}
+          />
+          <Text style={styles.p}>Location</Text>
+        </View>
+        <Text style={styles.p}>Date</Text>
+        <Text style={styles.p}>Description</Text>
+      </View>
     </Card>
   );
 };
