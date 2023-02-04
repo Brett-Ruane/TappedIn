@@ -52,9 +52,14 @@ const EventCard = () => {
       width: 100,
       resizeMode: "contain",
     },
-    icon: {
+    icon1: {
       width: 15,
       height: 20,
+      resizeMode: "contain",
+    },
+    icon2: {
+      width: 20,
+      height: 15,
       resizeMode: "contain",
     },
     h2: {
@@ -90,12 +95,18 @@ const EventCard = () => {
         <Text style={styles.h2}>Event Title</Text>
         <View style={styles.rowCenter}>
           <Image
-            style={[styles.icon, styles.smallMarginHorizontal]}
+            style={[styles.icon1, styles.smallMarginHorizontal]}
             source={require("../assets/icons/location.png")}
           />
           <Text style={styles.p}>Location</Text>
         </View>
-        <Text style={styles.p}>Date</Text>
+        <View style={styles.rowCenter}>
+          <Image
+            style={[styles.icon2, styles.smallMarginHorizontal]}
+            source={require("../assets/icons/calendar.png")}
+          />
+          <Text style={styles.p}>Date</Text>
+        </View>
         <Text style={styles.p}>Description</Text>
       </View>
     </Card>
