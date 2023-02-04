@@ -24,7 +24,7 @@ const CreateEventScreen = () => {
       <Text>Address</Text>
       <TextInputExample/>
       <Text>Tags</Text>
-      <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
       left
@@ -43,8 +43,8 @@ const CreateEventScreen = () => {
       width={150}
     />
   </>
-      </SafeAreaView>
-      <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      </View>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
       left
@@ -63,8 +63,8 @@ const CreateEventScreen = () => {
       width={150}
     />
   </>
-      </SafeAreaView>
-      <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      </View>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
       left
@@ -83,8 +83,8 @@ const CreateEventScreen = () => {
       width={150}
     />
   </>
-      </SafeAreaView>
-      <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      </View>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
       left
@@ -103,8 +103,8 @@ const CreateEventScreen = () => {
       width={150}
     />
   </>
-      </SafeAreaView>
-      <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      </View>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
       left
@@ -123,8 +123,8 @@ const CreateEventScreen = () => {
       width={150}
     />
   </>
-      </SafeAreaView>
-      <Text>Desc.</Text>
+      </View>
+      <Text style={{top: 5}}>Desc.</Text>
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <TextInputDesc/>
       </KeyboardAvoidingView>
