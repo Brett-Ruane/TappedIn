@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, TextInput, ScrollView} from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, TextInput, ScrollView, KeyboardAvoidingView} from "react-native";
 import { CheckBox } from '@rneui/themed';
 
 const CreateEventScreen = () => {
@@ -124,6 +124,10 @@ const CreateEventScreen = () => {
     />
   </>
       </SafeAreaView>
+      <Text>Desc.</Text>
+      <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
+      <TextInputDesc/>
+      </KeyboardAvoidingView>
     </View>
     </ScrollView>
   );
@@ -142,6 +146,34 @@ const TextInputExample = () => {
     </SafeAreaView>
   );
 };
+
+const TextInputDesc = () => {
+  const [text, onChangeText] = React.useState('');
+
+  return (
+    <SafeAreaView>
+      <TextInput
+        style={stylesDesc.input}
+        onChangeText={onChangeText}
+        value={text}
+        textAlignVertical="top"
+        multiline={true}
+        maxLength={250}
+      />
+    </SafeAreaView>
+  );
+};
+
+const stylesDesc = StyleSheet.create({
+  input: {
+    height: 200,
+    width: 190,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    borderColor: "black",
+  },
+});
 
 const stylesBox = StyleSheet.create({
   input: {
