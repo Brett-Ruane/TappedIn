@@ -1,5 +1,5 @@
-import { View, StyleSheet, Image } from "react-native";
-import { Card, Text, useTheme } from "@rneui/themed";
+import { View, StyleSheet } from "react-native";
+import { Card, Text, Image, useTheme } from "@rneui/themed";
 
 const EventCard = () => {
   const { theme } = useTheme();

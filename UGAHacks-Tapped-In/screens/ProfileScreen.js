@@ -1,9 +1,8 @@
 import React from "react";
+import { StyleSheet, View, ScrollView } from "react-native";
+import { Text, Image } from "@rneui/themed";
 
-//import all the components we are going to use
-import { StyleSheet, View, Image, Text, ScrollView } from "react-native";
-
-const App = () => {
+const ProfileScreen = () => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     top: 20,
     flex: 1,
     justifyContent: "flex-start",
-    alignItems: "left",
+    alignItems: "flex-start",
     backgroundColor: "white",
     borderColor: "black",
   },
@@ -65,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default ProfileScreen;
