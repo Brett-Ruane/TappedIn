@@ -31,7 +31,7 @@ const CreateEventScreen = () => {
             flexDirection: "row",
             flex: 1,
             justifyContent: "flex-start",
-            alignItems: "left",
+            alignItems: "center",
           }}
         >
           <>
@@ -58,7 +58,7 @@ const CreateEventScreen = () => {
             flexDirection: "row",
             flex: 1,
             justifyContent: "flex-start",
-            alignItems: "left",
+            alignItems: "center",
           }}
         >
           <>
@@ -85,7 +85,7 @@ const CreateEventScreen = () => {
             flexDirection: "row",
             flex: 1,
             justifyContent: "flex-start",
-            alignItems: "left",
+            alignItems: "center",
           }}
         >
           <>
@@ -112,7 +112,7 @@ const CreateEventScreen = () => {
             flexDirection: "row",
             flex: 1,
             justifyContent: "flex-start",
-            alignItems: "left",
+            alignItems: "center",
           }}
         >
           <>
@@ -139,7 +139,7 @@ const CreateEventScreen = () => {
             flexDirection: "row",
             flex: 1,
             justifyContent: "flex-start",
-            alignItems: "left",
+            alignItems: "center",
           }}
         >
           <>
