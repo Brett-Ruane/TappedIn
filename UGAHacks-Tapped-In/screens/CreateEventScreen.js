@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, TextInput, ScrollView, KeyboardAvoidingView} from "react-native";
+import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView} from "react-native";
 import { CheckBox } from '@rneui/themed';
 
 const CreateEventScreen = () => {
@@ -19,12 +19,12 @@ const CreateEventScreen = () => {
     <View style={{ flex: 1, justifyContent: "flex-start", alignItems: "center" }}>
       <Text style={{top: 5}}>Title</Text>
       <TextInputExample/>
-      <Text style={{top: 5}}>Image File</Text>
+      <Text>Image File</Text>
       <TextInputExample/>
       <Text>Address</Text>
       <TextInputExample/>
       <Text>Tags</Text>
-      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "center" }}>
       <>
     <CheckBox
       left
@@ -44,7 +44,7 @@ const CreateEventScreen = () => {
     />
   </>
       </View>
-      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "center" }}>
       <>
     <CheckBox
       left
@@ -64,7 +64,7 @@ const CreateEventScreen = () => {
     />
   </>
       </View>
-      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "center" }}>
       <>
     <CheckBox
       left
@@ -84,7 +84,7 @@ const CreateEventScreen = () => {
     />
   </>
       </View>
-      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "center" }}>
       <>
     <CheckBox
       left
@@ -104,7 +104,7 @@ const CreateEventScreen = () => {
     />
   </>
       </View>
-      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
+      <View style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "center" }}>
       <>
     <CheckBox
       left
@@ -124,7 +124,7 @@ const CreateEventScreen = () => {
     />
   </>
       </View>
-      <Text style={{top: 5}}>Desc.</Text>
+      <Text style={{top: 5}}>Description</Text>
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <TextInputDesc/>
       </KeyboardAvoidingView>
