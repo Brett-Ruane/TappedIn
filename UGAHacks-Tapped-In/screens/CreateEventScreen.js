@@ -27,90 +27,100 @@ const CreateEventScreen = () => {
       <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
-      center
+      left
       title="Gaming"
       checked={check1}
       onPress={() => setCheck1(!check1)}
+      width={150}
     />
   </>
   <>
     <CheckBox
-      center
+      left
       title="Study"
       checked={check2}
       onPress={() => setCheck2(!check2)}
+      width={150}
     />
   </>
       </SafeAreaView>
       <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
-      center
+      left
       title="Sports"
       checked={check3}
       onPress={() => setCheck3(!check3)}
+      width={150}
     />
   </>
   <>
     <CheckBox
-      center
+      left
       title="Social"
       checked={check4}
       onPress={() => setCheck4(!check4)}
+      width={150}
     />
   </>
       </SafeAreaView>
       <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
-      center
+      left
       title="Business"
       checked={check5}
       onPress={() => setCheck5(!check5)}
+      width={150}
     />
   </>
       <>
     <CheckBox
-      center
+      left
       title="Entertainment"
       checked={check6}
       onPress={() => setCheck6(!check6)}
+      width={150}
     />
   </>
       </SafeAreaView>
       <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
-      center
+      left
       title="Fitness"
       checked={check7}
       onPress={() => setCheck7(!check7)}
+      width={150}
     />
   </>
       <>
     <CheckBox
-      center
+      left
       title="Food"
       checked={check8}
       onPress={() => setCheck8(!check8)}
+      width={150}
     />
   </>
       </SafeAreaView>
       <SafeAreaView style={{ flexDirection: 'row', flex: 1, justifyContent: "flex-start", alignItems: "left" }}>
       <>
     <CheckBox
-      center
+      left
       title="Charity"
       checked={check9}
       onPress={() => setCheck9(!check9)}
+      width={150}
     />
   </>
       <>
     <CheckBox
-      center
+      left
       title="Other"
       checked={check10}
       onPress={() => setCheck10(!check10)}
+      width={150}
     />
   </>
       </SafeAreaView>
