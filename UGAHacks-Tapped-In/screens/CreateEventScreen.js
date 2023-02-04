@@ -137,13 +137,13 @@ const TextInputExample = () => {
   const [text, onChangeText] = React.useState('');
 
   return (
-    <SafeAreaView>
+    <View>
       <TextInput
         style={stylesBox.input}
         onChangeText={onChangeText}
         value={text}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -151,7 +151,7 @@ const TextInputDesc = () => {
   const [text, onChangeText] = React.useState('');
 
   return (
-    <SafeAreaView>
+    <View>
       <TextInput
         style={stylesDesc.input}
         onChangeText={onChangeText}
@@ -160,7 +160,7 @@ const TextInputDesc = () => {
         multiline={true}
         maxLength={250}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
