@@ -1,16 +1,14 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
 import { Text, Image, Button, useTheme } from "@rneui/themed";
-    
 
 const EventScreen = () => {
-
-    const [condi, setCondi] = useState(true);
-    const {theme} = useTheme();
-    return (
+  const [condi, setCondi] = useState(true);
+  const { theme } = useTheme();
+  return (
     <ScrollView>
       <View style={styles.container}>
-<        Image
+        <Image
           source={{
             uri: "https://imgs.search.brave.com/XPTweTHHEzKf9mkRVvjSOY_DecwrKmx2xTPyNAI0d-o/rs:fit:674:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5j/NlRiejdJYkNuOWJW/WHpYUVNPcWhnSGFG/TiZwaWQ9QXBp",
           }}
@@ -18,10 +16,9 @@ const EventScreen = () => {
           style={{
             width: 410,
             height: 300,
-            
           }}
         />
-      
+
         <Text style={styles.textHeadingStyle}>Event Name</Text>
         <Text style={styles.baseText}>Address:</Text>
         <Text style={styles.baseText1}>Posted by:</Text>
@@ -31,28 +28,28 @@ const EventScreen = () => {
           <Text style={styles.description}>TO BE FILLED</Text>
         </View>
         <Button
-        titleStyle={{
+          titleStyle={{
             fontFamily: "Dosis-Bold",
-            fontSize: 20
-        }}
-        buttonStyle={{
+            fontSize: 20,
+          }}
+          buttonStyle={{
             height: 50,
             width: 100,
             borderRadius: 10,
             marginBottom: 15,
-        }}
-        title={condi? "Tap In": "Tap Out"}
-        backgroundColor={theme.colors.primary}
-        onPress={() => setCondi(c => !c)}
+          }}
+          title={condi ? "Tap In" : "Tap Out"}
+          backgroundColor={theme.colors.primary}
+          onPress={() => setCondi((c) => !c)}
         />
-        </View>
+      </View>
     </ScrollView>
   );
-
 };
+
 const styles = StyleSheet.create({
   container: {
-    resizeMode: 'contain',
+    resizeMode: "contain",
     width: "100%",
     height: 750,
     justifyContent: "flex-start",
@@ -63,7 +60,7 @@ const styles = StyleSheet.create({
     left: 15,
     top: 10,
     fontFamily: "Dosis-Medium",
-    top:10,
+    top: 10,
     fontSize: 30,
     color: "#3FB0BF",
     fontWeight: "bold",
@@ -71,28 +68,28 @@ const styles = StyleSheet.create({
   baseText: {
     left: 15,
     fontFamily: "Dosis-Medium",
-    top:20,
+    top: 20,
     fontSize: 20,
     color: "black",
   },
   baseText1: {
     left: 15,
     fontFamily: "Dosis-Medium",
-    top:20,
+    top: 20,
     fontSize: 20,
     color: "black",
   },
   baseText2: {
     left: 15,
     fontFamily: "Dosis-Medium",
-    top:20,
+    top: 20,
     fontSize: 20,
     color: "black",
   },
   baseText3: {
     left: 15,
     fontFamily: "Dosis-Medium",
-    top:20,
+    top: 20,
     fontSize: 20,
     color: "black",
   },
