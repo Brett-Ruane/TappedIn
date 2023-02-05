@@ -14,6 +14,8 @@ const CreateEventScreen = () => {
   const [check9, setCheck9] = useState(false);
   const [check10, setCheck10] = useState(false);
 
+  const [buttonTitle, setButtonTitle] = useState("Post Event");
+
   const [title, setTitle] = useState("");
   const [capacity, setCapacity] = useState("");
   const [date, setDate] = useState("");
@@ -209,9 +211,9 @@ const CreateEventScreen = () => {
           borderRadius: 10,
           marginBottom: 15,
         }}
-        title="Post Event"
+        title={buttonTitle}
         backgroundColor={theme.colors.primary}
-        onPress={() => Alert.alert('Simple Button pressed')}
+        onPress={() => setButtonTitle("Posted")}
         />
         </KeyboardAvoidingView>
       </View>
