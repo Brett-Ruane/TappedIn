@@ -14,6 +14,28 @@ const CreateEventScreen = () => {
   const [check9, setCheck9] = useState(false);
   const [check10, setCheck10] = useState(false);
 
+  const [title, setTitle] = useState("");
+  const [capacity, setCapacity] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [tags, setTags] = useState([]);
+  const [address, setAddress] = useState("");
+  const [description, setDescription] = useState("");
+  const [user_id, setUser_id] = useState("");
+
+  const handleRegister = () => {
+    Axios.post("http://localhost:3001"), { 
+      title: title,
+      capacity: capacity,
+      date: date,
+      time: time,
+      tags: tags,
+      address: address,
+      description: description,
+      user_id: user_id,
+    }
+  };
+
   const {theme} = useTheme();
 
   return (
@@ -22,11 +44,15 @@ const CreateEventScreen = () => {
         style={{ flex: 1, justifyContent: "flex-start", alignItems: "center"}}
       >
         <Text style={{ top: 5 }}>Title</Text>
-        <TextInputExample />
-        <Text style={{ top: 5 }}>Image File</Text>
+        <TextInputExample/>
+        <Text>Image File</Text>
         <TextInputExample />
         <Text>Address</Text>
-        <TextInputExample />
+        <TextInputExample/>
+        <Text>YYYY-MM-DD</Text>
+        <TextInputExample/>
+        <Text>Capacity</Text>
+        <TextInputExample/>
         <Text>Tags</Text>
         <View
           style={{
