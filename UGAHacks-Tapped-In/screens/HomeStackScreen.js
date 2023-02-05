@@ -13,7 +13,8 @@ const HomeStackScreen = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          headerTitle: (props) => <LogoTitle {...props} />,
+          headerLeft: (props) => <HeaderLeft {...props} />,
+          headerTitle: (props) => <HeaderTitle />,
           headerBackground: (props) => <HeaderBackground {...props} />,
           headerRight: (props) => <HeaderRight {...props} />,
         }}
@@ -23,13 +24,17 @@ const HomeStackScreen = () => {
   );
 };
 
-const LogoTitle = () => {
+const HeaderLeft = () => {
   return (
     <Image
       style={{ width: 150, height: 40, resizeMode: "contain" }}
       source={require("../assets/icons/tapped-in-logo.png")}
     />
   );
+};
+
+const HeaderTitle = () => {
+  return <View></View>;
 };
 
 const HeaderBackground = () => {
