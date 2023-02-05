@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView, Button, Alert} from "react-native";
-import { CheckBox } from '@rneui/themed';
+import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView, Alert} from "react-native";
+import { CheckBox, useTheme, Button } from '@rneui/themed';
 
 const CreateEventScreen = () => {
   const [check1, setCheck1] = useState(false);
@@ -14,8 +14,10 @@ const CreateEventScreen = () => {
   const [check9, setCheck9] = useState(false);
   const [check10, setCheck10] = useState(false);
 
+  const {theme} = useTheme();
+
   return (
-    <ScrollView style={{height:2000}}>
+    <ScrollView style={{height:2500}}>
       <View
         style={{ flex: 1, justifyContent: "flex-start", alignItems: "center"}}
       >
@@ -173,6 +175,7 @@ const CreateEventScreen = () => {
         </View>
         <Button
         title="Post Event"
+        backgroundColor={theme.colors.primary}
         onPress={() => Alert.alert('Simple Button pressed')}
         />
         </KeyboardAvoidingView>
