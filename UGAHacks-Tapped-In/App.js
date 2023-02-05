@@ -56,7 +56,7 @@ const App = () => {
               headerShown: route.name === "Home" ? false : true,
             })}
           >
-            <Tab.Screen name="Home" component={HomeStackScreen} />
+            <Tab.Screen name="Home Stack" component={HomeStackScreen} />
             <Tab.Screen name="Create Event" component={CreateEventScreen} />
             <Tab.Screen name="Profile" component={ProfileScreen} />
           </Tab.Navigator>
