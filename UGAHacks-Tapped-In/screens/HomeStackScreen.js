@@ -1,8 +1,9 @@
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Image, useTheme } from "@rneui/themed";
 import HomeScreen from "./HomeScreen";
 import EventScreen from "./EventScreen";
-import { Image, useTheme } from "@rneui/themed";
+import * as RootNavigation from "../RootNavigation.js";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -26,7 +27,8 @@ const HomeStackScreen = () => {
           headerLeft: (props) => <HeaderLeft {...props} />,
           headerTitle: (props) => <HeaderTitle />,
           headerBackground: (props) => <HeaderBackground {...props} />,
-          headerBackImageSource: require("../assets/icons/home.png"),
+          headerRight: (props) => <HeaderRight2 {...props} />,
+          headerBackVisible: false,
         }}
       />
     </HomeStack.Navigator>
@@ -62,10 +64,27 @@ const HeaderBackground = () => {
 
 const HeaderRight = () => {
   return (
-    <Image
-      style={{ width: 40, height: 40, resizeMode: "contain" }}
-      source={require("../assets/icons/profile-placeholder.png")}
-    />
+    <TouchableOpacity onPress={() => {}}>
+      <Image
+        style={{ width: 40, height: 40, resizeMode: "contain" }}
+        source={require("../assets/icons/profile-placeholder.png")}
+      />
+    </TouchableOpacity>
+  );
+};
+
+const HeaderRight2 = () => {
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        RootNavigation.navigate("Home");
+      }}
+    >
+      <Image
+        style={{ width: 35, height: 35, resizeMode: "contain" }}
+        source={require("../assets/icons/home.png")}
+      />
+    </TouchableOpacity>
   );
 };
 

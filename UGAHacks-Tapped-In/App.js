@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStackScreen from "./screens/HomeStackScreen";
 import CreateEventScreen from "./screens/CreateEventScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import { navigationRef } from "./RootNavigation.js";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +31,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
-        <NavigationContainer>
+        <NavigationContainer ref={navigationRef}>
           <Tab.Navigator
             screenOptions={({ route }) => ({
               tabBarIcon: ({ focused, color, size }) => {
