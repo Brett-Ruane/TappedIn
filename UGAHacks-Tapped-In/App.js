@@ -1,4 +1,5 @@
-import { ThemeProvider, createTheme } from "@rneui/themed";
+import { View, StyleSheet } from "react-native";
+import { Image, ThemeProvider, createTheme, useTheme } from "@rneui/themed";
 import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
@@ -57,12 +58,66 @@ const App = () => {
             })}
           >
             <Tab.Screen name="Home Stack" component={HomeStackScreen} />
-            <Tab.Screen name="Create Event" component={CreateEventScreen} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
+            <Tab.Screen
+              name="Create Event"
+              component={CreateEventScreen}
+              options={{
+                headerLeft: (props) => <HeaderLeft {...props} />,
+                headerTitle: (props) => <HeaderTitle />,
+                headerBackground: (props) => <HeaderBackground {...props} />,
+                headerRight: (props) => <HeaderRight {...props} />,
+              }}
+            />
+            <Tab.Screen
+              name="Profile"
+              component={ProfileScreen}
+              options={{
+                headerLeft: (props) => <HeaderLeft {...props} />,
+                headerTitle: (props) => <HeaderTitle />,
+                headerBackground: (props) => <HeaderBackground {...props} />,
+                headerRight: (props) => <HeaderRight {...props} />,
+              }}
+            />
           </Tab.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>
     </ThemeProvider>
+  );
+};
+
+const HeaderLeft = () => {
+  return (
+    <Image
+      style={{ width: 180, height: 40, resizeMode: "contain" }}
+      source={require("./assets/icons/tapped-in-logo.png")}
+    />
+  );
+};
+
+const HeaderTitle = () => {
+  return <View></View>;
+};
+
+const HeaderBackground = () => {
+  const { theme } = useTheme();
+
+  const styles = StyleSheet.create({
+    container: {
+      width: "100%",
+      height: "100%",
+      backgroundColor: theme.colors.primary,
+    },
+  });
+
+  return <View style={styles.container}></View>;
+};
+
+const HeaderRight = () => {
+  return (
+    <Image
+      style={{ width: 70, height: 36, resizeMode: "contain" }}
+      source={require("./assets/icons/profile-placeholder.png")}
+    />
   );
 };
 
