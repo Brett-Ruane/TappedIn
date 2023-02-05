@@ -226,7 +226,7 @@ const CreateEventScreen = () => {
             justifyContent: "flex-start",
             alignItems: "center",
           }}>
-          <TextInputDisc2/>
+          <TextInputDesc2 text={description} onChangeText={setDescription}/>
         </View>
         <Button
         buttonStyle={{
@@ -257,7 +257,7 @@ const TextInputExample = ({text, onChangeText}) => {
   );
 };
 
-const TextInputDisc2 = ({text, onChangeText}) => {
+const TextInputDesc2 = ({text, onChangeText}) => {
 
   return (
     <View>
