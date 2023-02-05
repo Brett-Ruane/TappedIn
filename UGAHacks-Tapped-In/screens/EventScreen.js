@@ -18,8 +18,8 @@ const EventScreen = () => {
           }}
           //borderRadius will help to make Round Shape
           style={{
-            width: 200,
-            height: 200,
+            width: 400,
+            height: 300,
             overflow: "hidden",
             borderWidth: 2,
             borderColor: "black",
