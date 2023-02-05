@@ -45,19 +45,19 @@ const CreateEventScreen = () => {
   return (
     <ScrollView>
       <View
-        style={{ flex: 1, justifyContent: "flex-start", alignItems: "center"}}
+        style={{ flex: 1, justifyContent: "flex-start", alignItems: "center", backgroundColor: "white"}}
       >
-        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Title </Text>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Bold", fontSize: 20}}>Title </Text>
         <TextInputExample text={title} onChangeText={setTitle}/>
-        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Image File</Text>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Bold", fontSize: 20}}>Image File</Text>
         <TextInputExample text={event} onChangeText={setEvent}/>
-        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Address</Text>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Bold", fontSize: 20}}>Address</Text>
         <TextInputExample text={address} onChangeText={setAddress}/>
-        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>YYYY-MM-DD</Text>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Bold", fontSize: 20}}>YYYY-MM-DD</Text>
         <TextInputExample text={date} onChangeText={setDate}/>
-        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Capacity</Text>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Bold", fontSize: 20}}>Capacity</Text>
         <TextInputExample text={capacity} onChangeText={setCapacity}/>
-        <Text style={{ top: 5, fontFamily:"Dosis-Medium", fontSize: 20, padding: 20}}>Tags</Text>
+        <Text style={{ top: 5, fontFamily:"Dosis-Bold", fontSize: 20, padding: 20}}>Tags</Text>
         <View
           style={{
             flexDirection: "row",
@@ -71,7 +71,7 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Gaming"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check1}
               onPress={() => setCheck1(!check1)}
@@ -82,7 +82,7 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Study"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check2}
               onPress={() => setCheck2(!check2)}
@@ -103,7 +103,7 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Sports"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check3}
               onPress={() => setCheck3(!check3)}
@@ -114,7 +114,7 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Social"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check4}
               onPress={() => setCheck4(!check4)}
@@ -135,7 +135,7 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Business"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check5}
               onPress={() => setCheck5(!check5)}
@@ -146,7 +146,7 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Entertainment"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check6}
               onPress={() => setCheck6(!check6)}
@@ -167,7 +167,7 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Fitness"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check7}
               onPress={() => setCheck7(!check7)}
@@ -178,7 +178,7 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Food"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check8}
               onPress={() => setCheck8(!check8)}
@@ -199,7 +199,7 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Charity"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check9}
               onPress={() => setCheck9(!check9)}
@@ -210,7 +210,7 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Other"
-              fontFamily="Dosis-Medium"
+              fontFamily="Dosis-Bold"
               checkedColor={theme.colors.primary}
               checked={check10}
               onPress={() => setCheck10(!check10)}
@@ -218,7 +218,7 @@ const CreateEventScreen = () => {
             />
           </>
         </View>
-        <Text style={{ top: 15 , fontFamily:"Dosis-Medium", fontSize: 25, padding: 20}}>Description</Text>
+        <Text style={{ top: 15 , fontFamily:"Dosis-Bold", fontSize: 25, padding: 20}}>Description</Text>
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
           <View style={{
             flexDirection: "row",
