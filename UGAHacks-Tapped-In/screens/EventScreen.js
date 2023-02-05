@@ -23,7 +23,8 @@ const EventScreen = () => {
         />
       
         <Text style={styles.textHeadingStyle}>Event Name</Text>
-        <Text style={styles.baseText}>Posted by:</Text>
+        <Text style={styles.baseText}>Address:</Text>
+        <Text style={styles.baseText1}>Posted by:</Text>
         <Text style={styles.baseText2}>Date:</Text>
         <Text style={styles.baseText3}>TAGS</Text>
         <View style={styles.textContainer}>
@@ -66,6 +67,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   baseText: {
+    fontFamily: "Dosis-Medium",
+    top:20,
+    fontSize: 20,
+    color: "black",
+  },
+  baseText1: {
     fontFamily: "Dosis-Medium",
     top:20,
     fontSize: 20,
