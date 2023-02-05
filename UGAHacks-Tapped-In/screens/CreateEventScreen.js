@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView} from "react-native";
+import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView, Button, Alert} from "react-native";
 import { CheckBox } from '@rneui/themed';
 
 const CreateEventScreen = () => {
@@ -15,9 +15,9 @@ const CreateEventScreen = () => {
   const [check10, setCheck10] = useState(false);
 
   return (
-    <ScrollView>
+    <ScrollView style={{height:2000}}>
       <View
-        style={{ flex: 1, justifyContent: "flex-start", alignItems: "center" }}
+        style={{ flex: 1, justifyContent: "flex-start", alignItems: "center"}}
       >
         <Text style={{ top: 5 }}>Title</Text>
         <TextInputExample />
@@ -163,7 +163,18 @@ const CreateEventScreen = () => {
         </View>
         <Text style={{ top: 5 }}>Desc.</Text>
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
-          <TextInputDesc />
+          <View style={{
+            flexDirection: "row",
+            flex: 1,
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}>
+          <TextInputDesc/>
+        </View>
+        <Button
+        title="Post Event"
+        onPress={() => Alert.alert('Simple Button pressed')}
+        />
         </KeyboardAvoidingView>
       </View>
     </ScrollView>
