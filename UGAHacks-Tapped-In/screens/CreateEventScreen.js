@@ -257,8 +257,7 @@ const CreateEventScreen = () => {
         backgroundColor={theme.colors.primary}
         onPress={() => {
           makeString();
-          createPost();
-          setButtonTitle("Posted")}
+          createPost();}
         }
         />
         </KeyboardAvoidingView>
