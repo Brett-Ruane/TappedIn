@@ -22,9 +22,6 @@ const App = () => {
     lightColors: {
       primary: "#3FB0BF",
     },
-    darkColors: {
-      primary: "#000",
-    },
     mode: "light",
   });
 
