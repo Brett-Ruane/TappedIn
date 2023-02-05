@@ -24,6 +24,7 @@ const CreateEventScreen = () => {
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
   const [event, setEvent] = useState("");
+  const [user_id, setUser_id] = useState("63def2dc3fb4095a5053f30a");
 
   const handleRegister = () => {
     Axios.post("http://172.20.238.220:3001/post"), {
@@ -35,6 +36,7 @@ const CreateEventScreen = () => {
       address: address,
       description: description,
       event: event,
+      user_id: user_id,
     }
   };  
 
