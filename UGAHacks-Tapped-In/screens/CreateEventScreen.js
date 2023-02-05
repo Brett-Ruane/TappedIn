@@ -20,13 +20,12 @@ const CreateEventScreen = () => {
   const [capacity, setCapacity] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState("");
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
-  const [user_id, setUser_id] = useState("");
 
   const handleRegister = () => {
-    Axios.post("http://localhost:3001"), { 
+    Axios.post("http://localhost:3001"), {
       title: title,
       capacity: capacity,
       date: date,
@@ -34,7 +33,6 @@ const CreateEventScreen = () => {
       tags: tags,
       address: address,
       description: description,
-      user_id: user_id,
     }
   };
 
@@ -45,17 +43,17 @@ const CreateEventScreen = () => {
       <View
         style={{ flex: 1, justifyContent: "flex-start", alignItems: "center"}}
       >
-        <Text style={{ top: 5 }}>Title</Text>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Title </Text>
+        <TextInputExample text={title} onChangeText={setTitle}/>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Image File</Text>
         <TextInputExample/>
-        <Text>Image File</Text>
-        <TextInputExample />
-        <Text>Address</Text>
-        <TextInputExample/>
-        <Text>YYYY-MM-DD</Text>
-        <TextInputExample/>
-        <Text>Capacity</Text>
-        <TextInputExample/>
-        <Text>Tags</Text>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Address</Text>
+        <TextInputExample text={address} onChangeText={setAddress}/>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>YYYY-MM-DD</Text>
+        <TextInputExample text={date} onChangeText={setDate}/>
+        <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Capacity</Text>
+        <TextInputExample text={capacity} onChangeText={setCapacity}/>
+        <Text style={{ top: 5, fontFamily:"Dosis-Medium", fontSize: 20, padding: 20}}>Tags</Text>
         <View
           style={{
             flexDirection: "row",
@@ -69,6 +67,8 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Gaming"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check1}
               onPress={() => setCheck1(!check1)}
               width={150}
@@ -78,6 +78,8 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Study"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check2}
               onPress={() => setCheck2(!check2)}
               width={150}
@@ -97,6 +99,8 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Sports"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check3}
               onPress={() => setCheck3(!check3)}
               width={150}
@@ -106,6 +110,8 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Social"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check4}
               onPress={() => setCheck4(!check4)}
               width={150}
@@ -125,6 +131,8 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Business"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check5}
               onPress={() => setCheck5(!check5)}
               width={150}
@@ -134,6 +142,8 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Entertainment"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check6}
               onPress={() => setCheck6(!check6)}
               width={150}
@@ -153,6 +163,8 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Fitness"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check7}
               onPress={() => setCheck7(!check7)}
               width={150}
@@ -162,6 +174,8 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Food"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check8}
               onPress={() => setCheck8(!check8)}
               width={150}
@@ -181,6 +195,8 @@ const CreateEventScreen = () => {
               iconRight
               right
               title="Charity"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check9}
               onPress={() => setCheck9(!check9)}
               width={150}
@@ -190,13 +206,15 @@ const CreateEventScreen = () => {
             <CheckBox
               containerStyle
               title="Other"
+              fontFamily="Dosis-Medium"
+              checkedColor={theme.colors.primary}
               checked={check10}
               onPress={() => setCheck10(!check10)}
               width={150}
             />
           </>
         </View>
-        <Text style={{ top: 5 }}>Description</Text>
+        <Text style={{ top: 15 , fontFamily:"Dosis-Medium", fontSize: 25, padding: 20}}>Description</Text>
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
           <View style={{
             flexDirection: "row",
@@ -204,7 +222,7 @@ const CreateEventScreen = () => {
             justifyContent: "flex-start",
             alignItems: "center",
           }}>
-          <TextInputDesc/>
+          <TextInputDisc2/>
         </View>
         <Button
         buttonStyle={{
@@ -221,19 +239,37 @@ const CreateEventScreen = () => {
   );
 };
 
-const TextInputExample = () => {
-  const [text, onChangeText] = React.useState("");
+const TextInputExample = ({text, onChangeText}) => {
+  
 
   return (
     <View>
       <TextInput
         style={stylesBox.input}
-        onChangeText={onChangeText}
+        onChangeText={(target) => onChangeText(target)}
         value={text}
       />
     </View>
   );
 };
+
+const TextInputDisc2 = ({text, onChangeText}) => {
+
+  return (
+    <View>
+      <TextInput
+        style={stylesDesc.input}
+        onChangeText={(target) => onChangeText(target)}
+        value={text}
+        textAlignVertical="top"
+        multiline={true}
+        maxLength={250}
+        width={250}
+      />
+    </View>
+  );
+};
+
 
 const TextInputDesc = () => {
   const [text, onChangeText] = React.useState("");
@@ -274,21 +310,6 @@ const stylesBox = StyleSheet.create({
     borderColor: "black",
   },
 });
-
-const CheckboxComponent = () => {
-  const [check1, setCheck1] = useState(false);
-
-  return (
-    <>
-      <CheckBox
-        center
-        title="Click Here"
-        checked={check1}
-        onPress={() => setCheck1(!check1)}
-      />
-    </>
-  );
-};
 
 const styles = StyleSheet.create({
   container: {
