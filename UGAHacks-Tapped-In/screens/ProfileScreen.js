@@ -10,7 +10,7 @@ const ProfileScreen = () => {
       <View style={styles.container}>
 <        Image
           source={{
-            uri: "https://imgs.search.brave.com/XPTweTHHEzKf9mkRVvjSOY_DecwrKmx2xTPyNAI0d-o/rs:fit:674:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5j/NlRiejdJYkNuOWJW/WHpYUVNPcWhnSGFG/TiZwaWQ9QXBp",
+            uri: "https://jcbobcats.com/images/2020/11/5/basketball.jpg",
           }}
           //borderRadius will help to make Round Shape
           style={{
@@ -23,9 +23,9 @@ const ProfileScreen = () => {
           }}
         />
       
-        <Text style={styles.textHeadingStyle}>Username</Text>
+        <Text style={styles.textHeadingStyle}>hilma.reichel</Text>
         <View style={styles.textContainer}>
-          <Text style={styles.description}>TO BE FILLED</Text>
+          <Text style={styles.description}>I Love playing BasketBall. I would love to meet up with people that also enjoy playing BasketBall too. Feel free to contact me if you ever want to play. </Text>
         </View>
         </View>
     </ScrollView>
