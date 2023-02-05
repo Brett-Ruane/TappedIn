@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const server = axios.create({
-  baseURL: "http://172.20.20.123:3001/",
+  baseURL: "http://localhost:3001/",
   headers: { "Content-Type": "application/json" },
 });
 
