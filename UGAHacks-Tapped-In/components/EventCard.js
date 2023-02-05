@@ -1,8 +1,31 @@
 import { View, StyleSheet, TouchableHighlight } from "react-native";
+import { useEffect, useState } from "react";
 import { Card, Text, Image, useTheme } from "@rneui/themed";
+import { useFetch } from "../hooks/useFetch";
 
-const EventCard = ({ onClick }) => {
+const EventCard = ({ event, onClick }) => {
   const { theme } = useTheme();
+
+  const { get } = useFetch();
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  const getUser = async () => {
+    try {
+      const response = await get("getprofile", {
+        params: { user_id: event.user_id }
+      });
+      const responseData = response.data;
+      if (responseData) {
+        setUser(responseData);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   const styles = StyleSheet.create({
     cardContainerStyle: {
@@ -43,6 +66,7 @@ const EventCard = ({ onClick }) => {
     p: {
       fontFamily: "Dosis-Medium",
       fontSize: 16,
+      wrapperStyle: ""
     },
     username: {
       fontFamily: "Dosis-Medium",
@@ -65,7 +89,7 @@ const EventCard = ({ onClick }) => {
     },
     h2: {
       fontFamily: "Dosis-Bold",
-      fontSize: 28,
+      fontSize: 20,
       color: theme.colors.primary,
     },
     primary: {
@@ -91,32 +115,32 @@ const EventCard = ({ onClick }) => {
         <View style={[styles.columnCenter, styles.smallMarginHorizontal]}>
           <Card.Image
             source={{
-              uri: "https://dar.uga.edu/wp-content/uploads/UGA-Special-Events-Commencement-with-Hairy-Dawg-and-Ryan-Seacrest.png",
+              uri: event.event,
             }}
             containerStyle={styles.image}
           />
           <Text style={styles.p}>Posted by:</Text>
-          <Text style={[styles.p, styles.primary]}>Username</Text>
+          {user && <Text style={[styles.p, styles.primary]}>{user.username}</Text>}
         </View>
 
-        <View style={[styles.column, styles.smallMarginHorizontal]}>
-          <Text style={styles.h2}>Event Title</Text>
+        <View style={[styles.column, styles.smallMarginHorizontal, {flexShrink: 1}]}>
+          <Text style={styles.h2}>{event.title}</Text>
           <View style={styles.rowCenter}>
             <Image
               style={[styles.icon1, styles.smallMarginHorizontal]}
               source={require("../assets/icons/location.png")}
             />
-            <Text style={[styles.p, styles.smallMarginVertical]}>Location</Text>
+            <Text style={[styles.p, styles.smallMarginVertical]}>{event.address}</Text>
           </View>
           <View style={styles.rowCenter}>
             <Image
               style={[styles.icon2, styles.smallMarginHorizontal]}
               source={require("../assets/icons/calendar.png")}
             />
-            <Text style={[styles.p, styles.smallMarginVertical]}>Date</Text>
+            <Text style={[styles.p, styles.smallMarginVertical]}>{`${event.date} ${event.time}`}</Text>
           </View>
           <Text style={[styles.p, styles.smallMarginVertical]}>
-            Description
+            {event.description}
           </Text>
         </View>
       </Card>

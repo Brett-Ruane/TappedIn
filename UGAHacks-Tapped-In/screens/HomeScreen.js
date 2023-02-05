@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { FlatList, View, StyleSheet } from "react-native";
 import EventCard from "../components/EventCard";
+import { useFetch } from "../hooks/useFetch";
 
 const DATA = [
   {
@@ -29,14 +31,36 @@ const DATA = [
 ];
 
 const HomeScreen = ({ navigation }) => {
+
+  const { get } = useFetch();
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    getAllEvents();
+  }, []);
+
+  const getAllEvents = async () => {
+    try {
+      const response = await get("get");
+      const responseData = response.data;
+      if (responseData) {
+        setEvents(responseData);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   return (
     <View style={styles.container}>
       <FlatList
-        data={DATA}
-        renderItem={({ item }) => (
-          <EventCard onClick={() => navigation.navigate("Event")} />
-        )}
-        keyExtractor={(item) => item.id}
+        data={events}
+        renderItem={({ item }) => {
+          console.log(item);
+          return (
+          <EventCard event={item} onClick={() => navigation.navigate("Event")} />
+        )}}
+        keyExtractor={(event) => event._id}
       />
     </View>
   );

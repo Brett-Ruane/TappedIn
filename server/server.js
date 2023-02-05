@@ -47,14 +47,14 @@ client.connect();
  })
 
  app.get("/getprofile", async (req, res) => {
-    const user_id = req.body.user_id;
+    const user_id = req.query.user_id;
     const result = await client.db("tp_db").collection("profiles").findOne({_id : new ObjectId(user_id)});
     console.log(result);
     res.send(result);
  })
 
 app.listen(3001, () => {
-    console.log('Server starte at ${3001}')
+    console.log('Server start at ${3001}')
 })
 
 
