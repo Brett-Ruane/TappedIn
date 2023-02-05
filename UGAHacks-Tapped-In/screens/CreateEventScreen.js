@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, ScrollView, KeyboardAvoidingView, Alert} from "react-native";
 import { CheckBox, useTheme, Button } from '@rneui/themed';
+import Axios from "axios";
 
 const CreateEventScreen = () => {
   const [check1, setCheck1] = useState(false);
@@ -14,6 +15,8 @@ const CreateEventScreen = () => {
   const [check9, setCheck9] = useState(false);
   const [check10, setCheck10] = useState(false);
 
+  const arrayBox = [check1 , check2, check3, check4, check5, check6, check7, check8, check9, check10];
+
   const [buttonTitle, setButtonTitle] = useState("Post Event");
 
   const [title, setTitle] = useState("");
@@ -26,8 +29,22 @@ const CreateEventScreen = () => {
   const [event, setEvent] = useState("");
   const [user_id, setUser_id] = useState("63def2dc3fb4095a5053f30a");
 
+  var s = ""
+  const options = ["Gaming", "Study", "Sports", "Social", "Business", "Entertainment", "Fitness", "Food", "Charity", "Other"];
+
+  const makeString = () => {
+    for(let i = 0; i < arrayBox.length; i++) {
+      if (arrayBox[i]) {
+        s += options[i] + ", ";
+      }
+      
+    }
+    setTags(s);
+    //console.log(tags);
+  }
+
   const createPost = () => {
-    Axios.post("http://172.20.238.220:3001/post"), {
+    Axios.post("http://172.20.238.220:3001/post", {
       title: title,
       capacity: capacity,
       date: date,
@@ -37,7 +54,10 @@ const CreateEventScreen = () => {
       description: description,
       event: event,
       user_id: user_id,
-    }
+    }).then((response) => {
+      console.log(title);
+    })
+    
   };  
 
   const {theme} = useTheme();
@@ -235,7 +255,11 @@ const CreateEventScreen = () => {
         }}
         title={buttonTitle}
         backgroundColor={theme.colors.primary}
-        onPress={() => setButtonTitle("Posted")}
+        onPress={() => {
+          makeString();
+          createPost();
+          setButtonTitle("Posted")}
+        }
         />
         </KeyboardAvoidingView>
       </View>
