@@ -9,35 +9,36 @@ const EventScreen = () => {
     const {theme} = useTheme();
     return (
     <ScrollView>
-      <View style={styles.container2}>
-      </View>
       <View style={styles.container}>
 <        Image
           source={{
-            uri: "https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png",
+            uri: "https://imgs.search.brave.com/XPTweTHHEzKf9mkRVvjSOY_DecwrKmx2xTPyNAI0d-o/rs:fit:674:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5j/NlRiejdJYkNuOWJW/WHpYUVNPcWhnSGFG/TiZwaWQ9QXBp",
           }}
           //borderRadius will help to make Round Shape
           style={{
-            width: 200,
-            height: 200,
-            overflow: "hidden",
-            borderWidth: 2,
-            borderColor: "black",
+            width: 410,
+            height: 300,
             
           }}
         />
       
         <Text style={styles.textHeadingStyle}>Event Name</Text>
-        <Text style={styles.baseText}>Username</Text>
-        <Text style={styles.baseText2}>Date/Time</Text>
+        <Text style={styles.baseText}>Posted by:</Text>
+        <Text style={styles.baseText2}>Date:</Text>
         <Text style={styles.baseText3}>TAGS</Text>
         <View style={styles.textContainer}>
           <Text style={styles.description}>TO BE FILLED</Text>
         </View>
         <Button
+        titleStyle={{
+            fontFamily: "Dosis-Bold",
+            fontSize: 20
+        }}
         buttonStyle={{
-          borderRadius: 10,
-          marginBottom: 15,
+            height: 50,
+            width: 100,
+            borderRadius: 10,
+            marginBottom: 15,
         }}
         title={condi? "Tap In": "Tap Out"}
         backgroundColor={theme.colors.primary}
@@ -49,35 +50,35 @@ const EventScreen = () => {
 
 };
 const styles = StyleSheet.create({
-  container2: {
-    height:20,
-    backgroundColor: "#FFFFFF"
-  },
   container: {
     resizeMode: 'contain',
     width: "100%",
-    height: 900,
+    height: 750,
     justifyContent: "flex-start",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   textHeadingStyle: {
+    fontFamily: "Dosis-Medium",
     top:10,
     fontSize: 30,
-    color: "black",
+    color: "#3FB0BF",
     fontWeight: "bold",
   },
   baseText: {
+    fontFamily: "Dosis-Medium",
     top:20,
     fontSize: 20,
     color: "black",
   },
   baseText2: {
+    fontFamily: "Dosis-Medium",
     top:20,
     fontSize: 20,
     color: "black",
   },
   baseText3: {
+    fontFamily: "Dosis-Medium",
     top:20,
     fontSize: 20,
     color: "black",
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
   },
   description: {
+    fontFamily: "Dosis-Medium",
     left: 15,
     top: 10,
     fontSize: 20,
