@@ -10,7 +10,7 @@ const ProfileScreen = () => {
       <View style={styles.container}>
 <        Image
           source={{
-            uri: "https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png",
+            uri: "https://imgs.search.brave.com/XPTweTHHEzKf9mkRVvjSOY_DecwrKmx2xTPyNAI0d-o/rs:fit:674:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5j/NlRiejdJYkNuOWJW/WHpYUVNPcWhnSGFG/TiZwaWQ9QXBp",
           }}
           //borderRadius will help to make Round Shape
           style={{
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   textHeadingStyle: {
     top:10,
     fontSize: 40,
-    color: "black",
+    color: "#3FB0BF",
     fontWeight: "bold",
   },
   baseText: {

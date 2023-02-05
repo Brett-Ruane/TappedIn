@@ -12,7 +12,7 @@ const EventScreen = () => {
       <View style={styles.container}>
 <        Image
           source={{
-            uri: "https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png",
+            uri: "https://imgs.search.brave.com/XPTweTHHEzKf9mkRVvjSOY_DecwrKmx2xTPyNAI0d-o/rs:fit:674:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5j/NlRiejdJYkNuOWJW/WHpYUVNPcWhnSGFG/TiZwaWQ9QXBp",
           }}
           //borderRadius will help to make Round Shape
           style={{
@@ -23,8 +23,8 @@ const EventScreen = () => {
         />
       
         <Text style={styles.textHeadingStyle}>Event Name</Text>
-        <Text style={styles.baseText}>Username</Text>
-        <Text style={styles.baseText2}>Date/Time</Text>
+        <Text style={styles.baseText}>Posted by:</Text>
+        <Text style={styles.baseText2}>Date:</Text>
         <Text style={styles.baseText3}>TAGS</Text>
         <View style={styles.textContainer}>
           <Text style={styles.description}>TO BE FILLED</Text>
