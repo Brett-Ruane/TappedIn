@@ -36,7 +36,7 @@ const App = () => {
                 let iconName;
 
                 switch (route.name) {
-                  case "Home":
+                  case "Home Stack":
                     iconName = focused ? "home" : "home-outline";
                     break;
                   case "Create Event":
@@ -53,7 +53,7 @@ const App = () => {
               },
               tabBarActiveTintColor: theme.lightColors.primary,
               tabBarInactiveTintColor: "gray",
-              headerShown: route.name === "Home" ? false : true,
+              headerShown: route.name === "Home Stack" ? false : true,
             })}
           >
             <Tab.Screen name="Home Stack" component={HomeStackScreen} />
