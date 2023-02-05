@@ -2,6 +2,7 @@ import { ThemeProvider, createTheme } from "@rneui/themed";
 import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./screens/HomeScreen";
 import CreateEventScreen from "./screens/CreateEventScreen";
@@ -21,9 +22,6 @@ const App = () => {
     lightColors: {
       primary: "#3FB0BF",
     },
-    darkColors: {
-      primary: "#000",
-    },
     mode: "light",
   });
 
@@ -31,7 +29,31 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         <NavigationContainer>
-          <Tab.Navigator>
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ focused, color, size }) => {
+                let iconName;
+
+                switch (route.name) {
+                  case "Home":
+                    iconName = focused ? "home" : "home-outline";
+                    break;
+                  case "Create Event":
+                    iconName = focused ? "add-circle" : "add-circle-outline";
+                    break;
+                  case "Profile":
+                    iconName = focused
+                      ? "person-circle"
+                      : "person-circle-outline";
+                    break;
+                }
+
+                return <Ionicons name={iconName} size={size} color={color} />;
+              },
+              tabBarActiveTintColor: theme.lightColors.primary,
+              tabBarInactiveTintColor: "gray",
+            })}
+          >
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Create Event" component={CreateEventScreen} />
             <Tab.Screen name="Profile" component={ProfileScreen} />
