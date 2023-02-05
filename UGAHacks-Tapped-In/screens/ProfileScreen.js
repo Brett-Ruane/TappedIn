@@ -36,7 +36,7 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container2: {
     height:20,
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "white"
   },
   container: {
     resizeMode: 'contain',

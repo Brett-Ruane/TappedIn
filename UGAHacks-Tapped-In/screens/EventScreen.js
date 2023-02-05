@@ -9,8 +9,6 @@ const EventScreen = () => {
     const {theme} = useTheme();
     return (
     <ScrollView>
-      <View style={styles.container2}>
-      </View>
       <View style={styles.container}>
 <        Image
           source={{
@@ -18,11 +16,8 @@ const EventScreen = () => {
           }}
           //borderRadius will help to make Round Shape
           style={{
-            width: 400,
+            width: 410,
             height: 300,
-            overflow: "hidden",
-            borderWidth: 2,
-            borderColor: "black",
             
           }}
         />
@@ -35,9 +30,15 @@ const EventScreen = () => {
           <Text style={styles.description}>TO BE FILLED</Text>
         </View>
         <Button
+        titleStyle={{
+            fontFamily: "Dosis-Bold",
+            fontSize: 20
+        }}
         buttonStyle={{
-          borderRadius: 10,
-          marginBottom: 15,
+            height: 50,
+            width: 100,
+            borderRadius: 10,
+            marginBottom: 15,
         }}
         title={condi? "Tap In": "Tap Out"}
         backgroundColor={theme.colors.primary}
@@ -49,35 +50,35 @@ const EventScreen = () => {
 
 };
 const styles = StyleSheet.create({
-  container2: {
-    height:20,
-    backgroundColor: "#FFFFFF"
-  },
   container: {
     resizeMode: 'contain',
     width: "100%",
-    height: 900,
+    height: 750,
     justifyContent: "flex-start",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   textHeadingStyle: {
+    fontFamily: "Dosis-Medium",
     top:10,
     fontSize: 30,
-    color: "black",
+    color: "#3FB0BF",
     fontWeight: "bold",
   },
   baseText: {
+    fontFamily: "Dosis-Medium",
     top:20,
     fontSize: 20,
     color: "black",
   },
   baseText2: {
+    fontFamily: "Dosis-Medium",
     top:20,
     fontSize: 20,
     color: "black",
   },
   baseText3: {
+    fontFamily: "Dosis-Medium",
     top:20,
     fontSize: 20,
     color: "black",
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
   },
   description: {
+    fontFamily: "Dosis-Medium",
     left: 15,
     top: 10,
     fontSize: 20,
