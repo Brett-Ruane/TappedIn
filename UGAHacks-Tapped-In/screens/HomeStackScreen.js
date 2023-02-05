@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./HomeScreen";
 import EventScreen from "./EventScreen";
@@ -19,7 +19,16 @@ const HomeStackScreen = () => {
           headerRight: (props) => <HeaderRight {...props} />,
         }}
       />
-      <HomeStack.Screen name="Event" component={EventScreen} />
+      <HomeStack.Screen
+        name="Event"
+        component={EventScreen}
+        options={{
+          headerLeft: (props) => <HeaderLeft {...props} />,
+          headerTitle: (props) => <HeaderTitle />,
+          headerBackground: (props) => <HeaderBackground {...props} />,
+          headerBackImageSource: require("../assets/icons/home.png"),
+        }}
+      />
     </HomeStack.Navigator>
   );
 };
