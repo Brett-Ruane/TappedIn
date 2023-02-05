@@ -18,7 +18,7 @@ const ProfileScreen = () => {
             height: 200,
             overflow: "hidden",
             borderWidth: 2,
-            borderColor: "black",
+            borderColor: "lightgray",
             borderRadius: 200 / 2,
           }}
         />
@@ -47,15 +47,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   textHeadingStyle: {
+    fontFamily: "Dosis-Bold",
     top:10,
     fontSize: 40,
     color: "#3FB0BF",
     fontWeight: "bold",
-  },
-  baseText: {
-    top:20,
-    fontSize: 20,
-    color: "black",
   },
   textContainer: {
     width: 400,
@@ -68,6 +64,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
   },
   description: {
+    fontFamily: "Dosis-Medium",
     left: 15,
     top: 10,
     fontSize: 20,
