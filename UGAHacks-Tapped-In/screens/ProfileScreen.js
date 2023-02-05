@@ -20,7 +20,6 @@ const ProfileScreen = () => {
             borderWidth: 2,
             borderColor: "black",
             borderRadius: 200 / 2,
-            
           }}
         />
       
