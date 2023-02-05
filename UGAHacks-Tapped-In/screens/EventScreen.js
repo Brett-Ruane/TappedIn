@@ -1,33 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
 import { Text, Image, Button, useTheme } from "@rneui/themed";
+import { useFetch } from "../hooks/useFetch";
 
-const EventScreen = () => {
+const EventScreen = ({route}) => {
+  const { _id } = route.params;
   const [condi, setCondi] = useState(true);
   const { theme } = useTheme();
+
+  const { get } = useFetch();
+  const [event, setEvent] = useState();
+
+  useEffect(() => {
+    getEvent();
+  }, []);
+
+  const getEvent = async () => {
+    try {
+      const response = await get("getone", {
+        params: { _id: _id }
+      });
+      const responseData = response.data;
+      if (responseData) {
+        setEvent(responseData);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   return (
     <ScrollView>
-      <View style={styles.container}>
+      {event && <View style={[styles.container,{flexShrink: 1}]}>
         <Image
           source={{
-            uri: "https://imgs.search.brave.com/XPTweTHHEzKf9mkRVvjSOY_DecwrKmx2xTPyNAI0d-o/rs:fit:674:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5j/NlRiejdJYkNuOWJW/WHpYUVNPcWhnSGFG/TiZwaWQ9QXBp",
+            uri: event.event,
           }}
           //borderRadius will help to make Round Shape
           style={{
-            borderWidth: 7,
-            borderColor: "#FFF2C2",
             width: 415,
             height: 300,
           }}
         />
 
-        <Text style={styles.textHeadingStyle}>Event Name</Text>
-        <Text style={styles.baseText}>Address:</Text>
+        <Text style={styles.textHeadingStyle}>{event.title}</Text>
+        <Text style={styles.baseText}>{`Address: ${event.address}`}</Text>
         <Text style={styles.baseText1}>Posted by:</Text>
-        <Text style={styles.baseText2}>Date:</Text>
-        <Text style={styles.baseText3}>TAGS</Text>
+        <Text style={styles.baseText2}>{`Date: ${event.date} ${event.time}`}</Text>
+        <Text style={styles.baseText3}>{`Tags: ${event.tags}`}</Text>
         <View style={styles.textContainer}>
-          <Text style={styles.description}>Description</Text>
+          <Text style={styles.description}>{event.description}</Text>
         </View>
         <View style={styles.buttonContainer}>
           <Button
@@ -46,7 +68,7 @@ const EventScreen = () => {
             onPress={() => setCondi((c) => !c)}
           />
         </View>
-      </View>
+      </View>}
     </ScrollView>
   );
 };
@@ -62,12 +84,10 @@ const styles = StyleSheet.create({
   },
   textHeadingStyle: {
     left: 15,
-    top: 10,
     fontFamily: "Dosis-Bold",
     top: 10,
     fontSize: 30,
     color: "#3FB0BF",
-    fontWeight: "bold",
   },
   baseText: {
     left: 15,

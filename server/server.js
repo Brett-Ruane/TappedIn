@@ -18,6 +18,12 @@ client.connect();
     res.send(results);
  })
 
+ app.get("/getone", async (req, res) => {
+   const _id = req.query._id;
+   const result = await client.db("tp_db").collection("posts").findOne({_id: new ObjectId(_id)});
+   res.send(result);
+})
+
  app.post("/post", async (req, res) => {
     const title = req.body.title;
     const capacity = req.body.capacity;
@@ -43,13 +49,12 @@ client.connect();
         user_id: new ObjectId(user_id),
     };
     result = await client.db("tp_db").collection("posts").insertOne(newPost);
-    res.send("yay");
+    res.send("Successful");
  })
 
  app.get("/getprofile", async (req, res) => {
     const user_id = req.query.user_id;
     const result = await client.db("tp_db").collection("profiles").findOne({_id : new ObjectId(user_id)});
-    console.log(result);
     res.send(result);
  })
 

@@ -56,9 +56,8 @@ const HomeScreen = ({ navigation }) => {
       <FlatList
         data={events}
         renderItem={({ item }) => {
-          console.log(item);
           return (
-          <EventCard event={item} onClick={() => navigation.navigate("Event")} />
+          <EventCard event={item} onClick={() => navigation.navigate("Event", {_id: item._id})} />
         )}}
         keyExtractor={(event) => event._id}
       />
