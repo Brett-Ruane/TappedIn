@@ -4,7 +4,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "./screens/HomeScreen";
+import HomeStackScreen from "./screens/HomeStackScreen";
 import CreateEventScreen from "./screens/CreateEventScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 
@@ -22,6 +22,7 @@ const App = () => {
     lightColors: {
       primary: "#3FB0BF",
     },
+
     mode: "light",
   });
 
@@ -52,9 +53,10 @@ const App = () => {
               },
               tabBarActiveTintColor: theme.lightColors.primary,
               tabBarInactiveTintColor: "gray",
+              headerShown: route.name === "Home" ? false : true,
             })}
           >
-            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Home" component={HomeStackScreen} />
             <Tab.Screen name="Create Event" component={CreateEventScreen} />
             <Tab.Screen name="Profile" component={ProfileScreen} />
           </Tab.Navigator>

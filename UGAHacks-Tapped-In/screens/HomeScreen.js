@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import EventCard from "../components/EventCard";
 
 const DATA = [
@@ -28,12 +28,14 @@ const DATA = [
   },
 ];
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FlatList
         data={DATA}
-        renderItem={({ item }) => <EventCard />}
+        renderItem={({ item }) => (
+          <EventCard onClick={() => navigation.navigate("Event")} />
+        )}
         keyExtractor={(item) => item.id}
       />
     </View>

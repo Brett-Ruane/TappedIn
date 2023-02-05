@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { Card, Text, Image, useTheme } from "@rneui/themed";
 
 const EventCard = () => {
@@ -74,42 +74,47 @@ const EventCard = () => {
       padding: 10,
     },
     smallMarginHorizontal: {
-      marginHorizontal: 5,
+      marginHorizontal: 7,
     },
   });
 
   return (
-    <Card containerStyle={styles.cardContainerStyle} wrapperStyle={styles.row}>
-      <View style={[styles.columnCenter, styles.smallMarginHorizontal]}>
-        <Card.Image
-          source={{
-            uri: "https://dar.uga.edu/wp-content/uploads/UGA-Special-Events-Commencement-with-Hairy-Dawg-and-Ryan-Seacrest.png",
-          }}
-          containerStyle={styles.image}
-        />
-        <Text style={styles.p}>Posted by:</Text>
-        <Text style={[styles.p, styles.primary]}>Username</Text>
-      </View>
+    <TouchableHighlight onPress={onClick} underlayColor="white">
+      <Card
+        containerStyle={styles.cardContainerStyle}
+        wrapperStyle={styles.row}
+      >
+        <View style={[styles.columnCenter, styles.smallMarginHorizontal]}>
+          <Card.Image
+            source={{
+              uri: "https://dar.uga.edu/wp-content/uploads/UGA-Special-Events-Commencement-with-Hairy-Dawg-and-Ryan-Seacrest.png",
+            }}
+            containerStyle={styles.image}
+          />
+          <Text style={styles.p}>Posted by:</Text>
+          <Text style={[styles.p, styles.primary]}>Username</Text>
+        </View>
 
-      <View style={[styles.column, styles.smallMarginHorizontal]}>
-        <Text style={styles.h2}>Event Title</Text>
-        <View style={styles.rowCenter}>
-          <Image
-            style={[styles.icon1, styles.smallMarginHorizontal]}
-            source={require("../assets/icons/location.png")}
-          />
-          <Text style={styles.p}>Location</Text>
+        <View style={[styles.column, styles.smallMarginHorizontal]}>
+          <Text style={styles.h2}>Event Title</Text>
+          <View style={styles.rowCenter}>
+            <Image
+              style={[styles.icon1, styles.smallMarginHorizontal]}
+              source={require("../assets/icons/location.png")}
+            />
+            <Text style={styles.p}>Location</Text>
+          </View>
+          <View style={styles.rowCenter}>
+            <Image
+              style={[styles.icon2, styles.smallMarginHorizontal]}
+              source={require("../assets/icons/calendar.png")}
+            />
+            <Text style={styles.p}>Date</Text>
+          </View>
+          <Text style={styles.p}>Description</Text>
         </View>
-        <View style={styles.rowCenter}>
-          <Image
-            style={[styles.icon2, styles.smallMarginHorizontal]}
-            source={require("../assets/icons/calendar.png")}
-          />
-          <Text style={styles.p}>Date</Text>
-        </View>
-        <Text style={styles.p}>Description</Text>
-      </View>
-    </Card>
+      </Card>
+    </TouchableHighlight>
   );
 };
 
