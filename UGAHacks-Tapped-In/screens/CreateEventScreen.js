@@ -38,7 +38,8 @@ const CreateEventScreen = () => {
         >
           <>
             <CheckBox
-              center
+              iconRight
+              right
               title="Gaming"
               checked={check1}
               onPress={() => setCheck1(!check1)}
@@ -47,7 +48,7 @@ const CreateEventScreen = () => {
           </>
           <>
             <CheckBox
-              center
+              containerStyle
               title="Study"
               checked={check2}
               onPress={() => setCheck2(!check2)}
@@ -65,7 +66,8 @@ const CreateEventScreen = () => {
         >
           <>
             <CheckBox
-              center
+              iconRight
+              right
               title="Sports"
               checked={check3}
               onPress={() => setCheck3(!check3)}
@@ -74,7 +76,7 @@ const CreateEventScreen = () => {
           </>
           <>
             <CheckBox
-              center
+              containerStyle
               title="Social"
               checked={check4}
               onPress={() => setCheck4(!check4)}
@@ -92,7 +94,8 @@ const CreateEventScreen = () => {
         >
           <>
             <CheckBox
-              center
+              iconRight
+              right
               title="Business"
               checked={check5}
               onPress={() => setCheck5(!check5)}
@@ -101,7 +104,7 @@ const CreateEventScreen = () => {
           </>
           <>
             <CheckBox
-              center
+              containerStyle
               title="Entertainment"
               checked={check6}
               onPress={() => setCheck6(!check6)}
@@ -119,7 +122,8 @@ const CreateEventScreen = () => {
         >
           <>
             <CheckBox
-              center
+              iconRight
+              right
               title="Fitness"
               checked={check7}
               onPress={() => setCheck7(!check7)}
@@ -128,7 +132,7 @@ const CreateEventScreen = () => {
           </>
           <>
             <CheckBox
-              center
+              containerStyle
               title="Food"
               checked={check8}
               onPress={() => setCheck8(!check8)}
@@ -146,7 +150,8 @@ const CreateEventScreen = () => {
         >
           <>
             <CheckBox
-              center
+              iconRight
+              right
               title="Charity"
               checked={check9}
               onPress={() => setCheck9(!check9)}
@@ -155,7 +160,7 @@ const CreateEventScreen = () => {
           </>
           <>
             <CheckBox
-              center
+              containerStyle
               title="Other"
               checked={check10}
               onPress={() => setCheck10(!check10)}
