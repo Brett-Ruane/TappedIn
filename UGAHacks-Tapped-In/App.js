@@ -1,22 +1,69 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ThemeProvider, createTheme } from "@rneui/themed";
+import { useFonts } from "expo-font";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import HomeStackScreen from "./screens/HomeStackScreen";
+import CreateEventScreen from "./screens/CreateEventScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
-export default function App() {
+const Tab = createBottomTabNavigator();
+
+const App = () => {
+  const [fonts] = useFonts({
+    "Dosis-Regular": require("./assets/fonts/Dosis-Regular.ttf"),
+    "Dosis-Medium": require("./assets/fonts/Dosis-Medium.ttf"),
+    "Dosis-SemiBold": require("./assets/fonts/Dosis-SemiBold.ttf"),
+    "Dosis-Bold": require("./assets/fonts/Dosis-Bold.ttf"),
+  });
+
+  const theme = createTheme({
+    lightColors: {
+      primary: "#3FB0BF",
+    },
+
+    mode: "light",
+  });
+
   return (
-    <NavigationContainer>
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
-    </NavigationContainer>
-  );
-}
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ focused, color, size }) => {
+                let iconName;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+                switch (route.name) {
+                  case "Home Stack":
+                    iconName = focused ? "home" : "home-outline";
+                    break;
+                  case "Create Event":
+                    iconName = focused ? "add-circle" : "add-circle-outline";
+                    break;
+                  case "Profile":
+                    iconName = focused
+                      ? "person-circle"
+                      : "person-circle-outline";
+                    break;
+                }
+
+                return <Ionicons name={iconName} size={size} color={color} />;
+              },
+              tabBarActiveTintColor: theme.lightColors.primary,
+              tabBarInactiveTintColor: "gray",
+              headerShown: route.name === "Home Stack" ? false : true,
+            })}
+          >
+            <Tab.Screen name="Home Stack" component={HomeStackScreen} />
+            <Tab.Screen name="Create Event" component={CreateEventScreen} />
+            <Tab.Screen name="Profile" component={ProfileScreen} />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </ThemeProvider>
+  );
+};
+
+export default App;
