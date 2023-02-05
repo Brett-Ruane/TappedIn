@@ -23,9 +23,10 @@ const CreateEventScreen = () => {
   const [tags, setTags] = useState("");
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
+  const [event, setEvent] = useState("");
 
   const handleRegister = () => {
-    Axios.post("http://localhost:3001"), {
+    Axios.post("http://172.20.238.220:3001/post"), {
       title: title,
       capacity: capacity,
       date: date,
@@ -33,8 +34,9 @@ const CreateEventScreen = () => {
       tags: tags,
       address: address,
       description: description,
+      event: event,
     }
-  };
+  };  
 
   const {theme} = useTheme();
 
@@ -46,7 +48,7 @@ const CreateEventScreen = () => {
         <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Title </Text>
         <TextInputExample text={title} onChangeText={setTitle}/>
         <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Image File</Text>
-        <TextInputExample/>
+        <TextInputExample text={event} onChangeText={setEvent}/>
         <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>Address</Text>
         <TextInputExample text={address} onChangeText={setAddress}/>
         <Text style={{ top: 5 , fontFamily:"Dosis-Medium", fontSize: 20}}>YYYY-MM-DD</Text>
