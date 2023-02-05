@@ -174,6 +174,10 @@ const CreateEventScreen = () => {
           <TextInputDesc/>
         </View>
         <Button
+        buttonStyle={{
+          borderRadius: 10,
+          marginBottom: 15,
+        }}
         title="Post Event"
         backgroundColor={theme.colors.primary}
         onPress={() => Alert.alert('Simple Button pressed')}
