@@ -44,7 +44,7 @@ const CreateEventScreen = () => {
   }
 
   const createPost = () => {
-    Axios.post("http://172.20.238.220:3001/post"), {
+    Axios.post("http://172.20.238.220:3001/post", {
       title: title,
       capacity: capacity,
       date: date,
@@ -54,8 +54,10 @@ const CreateEventScreen = () => {
       description: description,
       event: event,
       user_id: user_id,
-    }
-    console.log("Data sent");
+    }).then((response) => {
+      console.log(title);
+    })
+    
   };  
 
   const {theme} = useTheme();
