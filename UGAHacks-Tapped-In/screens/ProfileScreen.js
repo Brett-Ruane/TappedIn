@@ -24,7 +24,6 @@ const ProfileScreen = () => {
         />
       
         <Text style={styles.textHeadingStyle}>Username</Text>
-        <Text style={styles.baseText}>TAGS</Text>
         <View style={styles.textContainer}>
           <Text style={styles.description}>TO BE FILLED</Text>
         </View>
