@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   textHeadingStyle: {
     left: 15,
     top: 10,
-    fontFamily: "Dosis-Medium",
+    fontFamily: "Dosis-Bold",
     top: 10,
     fontSize: 30,
     color: "#3FB0BF",
