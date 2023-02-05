@@ -17,7 +17,7 @@ const CreateEventScreen = () => {
   const {theme} = useTheme();
 
   return (
-    <ScrollView style={{height:2500}}>
+    <ScrollView>
       <View
         style={{ flex: 1, justifyContent: "flex-start", alignItems: "center"}}
       >
@@ -168,7 +168,7 @@ const CreateEventScreen = () => {
             />
           </>
         </View>
-        <Text style={{ top: 5 }}>Desc.</Text>
+        <Text style={{ top: 5 }}>Description</Text>
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
           <View style={{
             flexDirection: "row",
@@ -219,6 +219,7 @@ const TextInputDesc = () => {
         textAlignVertical="top"
         multiline={true}
         maxLength={250}
+        width={250}
       />
     </View>
   );
